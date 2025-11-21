@@ -1,123 +1,127 @@
 # WCAG Contrast Checker
 
-A Figma plugin that automatically calculates the contrast ratio between text and background colors, helping designers ensure their designs meet WCAG 2.1 AA accessibility standards.
+テキストと背景色のコントラスト比を自動計算し、デザインがWCAG 2.1 AAアクセシビリティ基準を満たしているかを確認できるFigmaプラグインです。
 
 ![WCAG Contrast Checker](https://img.shields.io/badge/WCAG-2.1%20AA-brightgreen)
 ![Figma Plugin](https://img.shields.io/badge/Figma-Plugin-orange)
 
-## Features
+## 機能
 
-- ✅ **Automatic Contrast Calculation**: Calculates contrast ratio using WCAG 2.1 formula
-- 🎯 **WCAG AA Compliance Check**: Validates against 4.5:1 minimum ratio
-- 🎨 **Color Visualization**: Displays text and background colors with RGB values
-- ⚡ **Real-time Feedback**: Instant Pass/Fail judgment
-- 🌐 **Japanese UI**: User interface in Japanese
+- ✅ **自動コントラスト計算**: WCAG 2.1の計算式を使用してコントラスト比を算出
+- 🎯 **WCAG AA準拠チェック**: 最小比率4.5:1に対する検証
+- 🎨 **色の可視化**: テキストと背景色をRGB値とともに表示
+- ⚡ **リアルタイムフィードバック**: 即座にPass/Failを判定
+- 🌐 **日本語UI**: 日本語のユーザーインターフェース
 
-## Screenshots
+## スクリーンショット
 
-<img src="screenshot.png" width="400" alt="Plugin Screenshot" />
+<img src="screenshot.png" width="400" alt="プラグインのスクリーンショット" />
 
-## How It Works
+## 使い方
 
-1. Select a text layer in Figma
-2. Click "Check Contrast" button
-3. View the contrast ratio and WCAG AA compliance status
+1. Figmaでテキストレイヤーを選択
+2. 「Check Contrast」ボタンをクリック
+3. コントラスト比とWCAG AA準拠状況を確認
 
-The plugin:
-- Extracts the text color from the selected text layer
-- Finds the background color by traversing parent elements
-- Calculates relative luminance for both colors
-- Computes the contrast ratio: `(L_lighter + 0.05) / (L_darker + 0.05)`
-- Validates against WCAG 2.1 AA standard (4.5:1)
+プラグインの動作：
 
-## Installation
+- 選択されたテキストレイヤーから文字色を抽出
+- 親要素を遡って背景色を検索
+- 両色の相対輝度を計算
+- コントラスト比を算出: `(L_明るい + 0.05) / (L_暗い + 0.05)`
+- WCAG 2.1 AA基準（4.5:1）に対して検証
 
-### For Development
+## インストール
 
-1. **Prerequisites**
-   - [Node.js](https://nodejs.org) v22 or higher
-   - [Figma desktop app](https://figma.com/downloads/)
+### 開発者向け
 
-2. **Clone and Install**
+1. **前提条件**
+   - [Node.js](https://nodejs.org) v22以上
+   - [Figma デスクトップアプリ](https://figma.com/downloads/)
+
+2. **クローンとインストール**
+
    ```bash
    git clone https://github.com/junhongo-ccs/wcag-contrast-checker.git
    cd wcag-contrast-checker/react-editor
    npm install
    ```
 
-3. **Build the Plugin**
+3. **プラグインのビルド**
+
    ```bash
    npm run build
    ```
 
-4. **Load in Figma**
-   - Open Figma desktop app
-   - Press `Cmd + /` (Quick Actions)
-   - Search for "Import plugin from manifest..."
-   - Select the `manifest.json` file from the project
+4. **Figmaで読み込み**
+   - Figmaデスクトップアプリを開く
+   - `Cmd + /`（クイックアクション）を押す
+   - 「Import plugin from manifest...」を検索
+   - プロジェクトの`manifest.json`ファイルを選択
 
-### For Users
+### ユーザー向け
 
-*Coming soon: This plugin will be published to Figma Community*
+*近日公開予定: このプラグインはFigma Communityで公開予定です*
 
-## Development
+## 開発
 
-### Build Commands
+### ビルドコマンド
 
 ```bash
-# Production build
+# プロダクションビルド
 npm run build
 
-# Development mode (auto-rebuild on changes)
+# 開発モード（変更時に自動再ビルド）
 npm run watch
 ```
 
-### Tech Stack
+### 技術スタック
 
-- **Framework**: [Create Figma Plugin](https://yuanqing.github.io/create-figma-plugin/)
-- **UI Library**: Preact (React-compatible)
-- **Language**: TypeScript
-- **Styling**: CSS with custom properties
+- **フレームワーク**: [Create Figma Plugin](https://yuanqing.github.io/create-figma-plugin/)
+- **UIライブラリ**: Preact（React互換）
+- **言語**: TypeScript
+- **スタイリング**: CSS
 
-### Project Structure
+### プロジェクト構成
 
 ```
 react-editor/
 ├── src/
-│   ├── main.ts          # Plugin main thread (Figma API)
-│   ├── ui.tsx           # UI components (Preact)
-│   ├── types.ts         # TypeScript type definitions
-│   └── styles.css       # Component styles
-├── build/               # Generated build output
-├── manifest.json        # Figma plugin manifest (generated)
-└── package.json         # Project configuration
+│   ├── main.ts          # プラグインメインスレッド（Figma API）
+│   ├── ui.tsx           # UIコンポーネント（Preact）
+│   ├── types.ts         # TypeScript型定義
+│   └── styles.css       # コンポーネントスタイル
+├── build/               # ビルド出力（自動生成）
+├── manifest.json        # Figmaプラグインマニフェスト（自動生成）
+└── package.json         # プロジェクト設定
 ```
 
-### Debugging
+### デバッグ
 
-Use `console.log()` to inspect values. To view logs:
-1. Press `Cmd + /` in Figma
-2. Search for "Show/Hide Console"
-3. View console output
+`console.log()`を使用して値を確認できます。ログを表示するには：
 
-## WCAG Resources
+1. Figmaで`Cmd + /`を押す
+2. 「Show/Hide Console」を検索
+3. コンソール出力を確認
 
-- [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/)
-- [Contrast Ratio Definition](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio)
-- [Understanding WCAG Success Criterion 1.4.3](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
+## WCAGリソース
 
-## Contributing
+- [WCAG 2.1 ガイドライン](https://www.w3.org/TR/WCAG21/)
+- [コントラスト比の定義](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio)
+- [WCAG達成基準 1.4.3を理解する](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## コントリビューション
 
-## License
+プルリクエストを歓迎します！お気軽にご投稿ください。
+
+## ライセンス
 
 MIT
 
-## Credits
+## クレジット
 
-Built with [Create Figma Plugin](https://yuanqing.github.io/create-figma-plugin/) by [@yuanqing](https://github.com/yuanqing)
+[@yuanqing](https://github.com/yuanqing)による[Create Figma Plugin](https://yuanqing.github.io/create-figma-plugin/)を使用して構築
 
-## Author
+## 作者
 
 Created by [junhongo-ccs](https://github.com/junhongo-ccs)
