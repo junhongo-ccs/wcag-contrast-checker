@@ -1,0 +1,170 @@
+body {
+  margin: 12px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.container {
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #333333;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.header {
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2b4a;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 11px;
+  color: #666666;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* gap を削除して、個別にマージンを設定 */
+}
+
+.button-primary {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0066ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 0;
+  /* margin-bottomを削除 */
+}
+
+
+.button-primary:hover:not(:disabled) {
+  background-color: #0052cc;
+}
+
+
+.button-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  margin-top: 24px;
+  /* 明確に24pxのスペースを確保 */
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.color-display {
+  display: flex;
+  gap: 12px;
+}
+
+.color-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.color-box {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+
+.color-label {
+  font-size: 10px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.color-value {
+  font-size: 10px;
+  font-family: monospace;
+  color: #333333;
+}
+
+.ratio-display {
+  text-align: center;
+  padding: 12px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.ratio-label {
+  font-size: 10px;
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.ratio-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.result-badge {
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.result-badge.pass {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.result-badge.fail {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.info-text {
+  font-size: 11px;
+  color: #666666;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  color: #991b1b;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.error-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
