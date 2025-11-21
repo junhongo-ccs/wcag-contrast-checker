@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="container">
       <div className="header">
-        <h2>WCAG Contrast Checker</h2>
+        <h2>WCAG Contrast チェッカー</h2>
         <p className="subtitle">テキストレイヤーを選択してコントラストをチェックします</p>
       </div>
 
@@ -58,6 +58,8 @@ function App() {
         >
           {isChecking ? 'チェック中...' : 'Check Contrast'}
         </button>
+
+        {result && <div className="spacer" />}
 
         {result && (
           <div className="result-container">

@@ -64,6 +64,10 @@ body {
   cursor: not-allowed;
 }
 
+.spacer {
+  height: 16px;
+}
+
 .result-container {
   display: flex;
   flex-direction: column;
